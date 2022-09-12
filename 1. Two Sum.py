@@ -1,6 +1,15 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        for i in range(0, len(nums)-1):
-            for j in range(i+1, len(nums)):
-                if nums[i]+nums[j] == target:
-                    return i, j
+        '''
+        for i in range(0,len(nums)-1):
+            for j in range(i+1,len(nums)):
+                if nums[i]+nums[j]==target:
+                    return i,j
+        '''
+        map = {}
+        for i, j in enumerate(nums):
+            diff = target - j
+            if diff in map:
+                return [map[diff], i]
+            map[j] = i
+        return

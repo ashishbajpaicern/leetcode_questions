@@ -1,1 +1,1 @@
-# leetcode_questions.
+# leetcode questions.

@@ -1,8 +1,14 @@
 class Solution:
+    """
     def containsDuplicate(self, nums: List[int]) -> bool:
-        s = set()
+        d = {}
         for i in nums:
-            if i in s:
+            d[i] = d.get(i,0) + 1
+            if d[i] > 1:
                 return True
-            s.add(i)
         return False
+    """
+
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        a = set(nums)
+        return len(a) != len(nums)
